@@ -1,8 +1,0 @@
-/Users/Amit/Desktop/Python/Shell_Prog/system_call/Project/CMakeFiles/rebuild_cache.dir
-/Users/Amit/Desktop/Python/Shell_Prog/system_call/Project/CMakeFiles/edit_cache.dir
-/Users/Amit/Desktop/Python/Shell_Prog/system_call/Project/client/CMakeFiles/rebuild_cache.dir
-/Users/Amit/Desktop/Python/Shell_Prog/system_call/Project/client/CMakeFiles/edit_cache.dir
-/Users/Amit/Desktop/Python/Shell_Prog/system_call/Project/client/CMakeFiles/client.dir
-/Users/Amit/Desktop/Python/Shell_Prog/system_call/Project/server/CMakeFiles/rebuild_cache.dir
-/Users/Amit/Desktop/Python/Shell_Prog/system_call/Project/server/CMakeFiles/edit_cache.dir
-/Users/Amit/Desktop/Python/Shell_Prog/system_call/Project/server/CMakeFiles/server.dir
