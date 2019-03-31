@@ -1,45 +1,57 @@
 #include "utility.h"
 
-void eprint(const char* fmt, ...){
-    va_list args;
-    va_start(args,fmt);
-    char err_msg[100] = {0};
-    sprintf(err_msg,"\x1b[1;37;41mError: %s \x1b[0m\n",fmt);
-    vprintf(err_msg,args);
-    va_end(args);
+// A library of utility functions.
+
+// This function prints Errors in format Error: message, text colored in red
+void eprint(const char *fmt, ...)
+{
+	va_list args;
+	va_start(args, fmt);
+	char err_msg[100] = {0};
+	sprintf(err_msg, "\033[0;31mError: %s \033[0m\n", fmt);
+	vprintf(err_msg, args);
+	va_end(args);
 }
 
-void wprint(const char* fmt, ...){
-    va_list args;
-    va_start(args,fmt);
-    char w_msg[100]={0};
-    sprintf(w_msg,"\x1b[1;37;43mWarning: %s \x1b[0m\n",fmt);
-    vprintf(w_msg,args);
-    va_end(args);
+// This function prints Warnings, text colored in yellow
+void wprint(const char *fmt, ...)
+{
+	va_list args;
+	va_start(args, fmt);
+	char w_msg[100] = {0};
+	sprintf(w_msg, "\033[0;33mWarning: %s \033[0m\n", fmt);
+	vprintf(w_msg, args);
+	va_end(args);
 }
 
-void sprint(const char* fmt, ...){
-    va_list args;
-    va_start(args,fmt);
-    char s_msg[100]={0};
-    sprintf(s_msg,"\x1b[1;37;42mSuccess: %s \x1b[0m\n",fmt);
-    vprintf(s_msg,args);
-    va_end(args);
+// This function prints success messages, text colored in green
+void sprint(const char *fmt, ...)
+{
+	va_list args;
+	va_start(args, fmt);
+	char s_msg[100] = {0};
+	sprintf(s_msg, "\033[0;32mSuccess: %s \033[0m\n\n", fmt);
+	vprintf(s_msg, args);
+	va_end(args);
 }
 
+// Trim input string and returns the string
+char *trim(char *str)
+{
+	char *end;
+	// Increment str to first no space character
+	while (isspace((unsigned char)*str))
+		str++;
 
-char *trim(char *str){
-  char *end;
+	if (*str == 0)
+		return str;
 
-  while(isspace((unsigned char)*str)) str++;
+	end = str + strlen(str) - 1;
+	// Decrement end to last no space character
+	while (end > str && isspace((unsigned char)*end))
+		end--;
 
-  if(*str == 0)
-    return str;
+	end[1] = '\0';
 
-  end = str + strlen(str) - 1;
-  while(end > str && isspace((unsigned char)*end)) end--;
-
-  end[1] = '\0';
-
-  return str;
+	return str;
 }
