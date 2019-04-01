@@ -11,6 +11,6 @@ set(
 
 set ( ChatApp_MAJOR_VERSION 1 )
 set ( ChatApp_MINOR_VERSION 0 )
-
+include_directories(includes)
 add_subdirectory(client)
 add_subdirectory(server)

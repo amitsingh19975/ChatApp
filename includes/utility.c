@@ -8,7 +8,7 @@ void eprint(const char *fmt, ...)
 	va_list args;
 	va_start(args, fmt);
 	char err_msg[100] = {0};
-	sprintf(err_msg, "\033[0;31mError: %s \033[0m\n", fmt);
+	sprintf(err_msg, "\033[31mError: %s \033[0m\n", fmt);
 	vprintf(err_msg, args);
 	va_end(args);
 }
@@ -19,7 +19,7 @@ void wprint(const char *fmt, ...)
 	va_list args;
 	va_start(args, fmt);
 	char w_msg[100] = {0};
-	sprintf(w_msg, "\033[0;33mWarning: %s \033[0m\n", fmt);
+	sprintf(w_msg, "\033[33mWarning: %s \033[0m\n", fmt);
 	vprintf(w_msg, args);
 	va_end(args);
 }
@@ -30,7 +30,7 @@ void sprint(const char *fmt, ...)
 	va_list args;
 	va_start(args, fmt);
 	char s_msg[100] = {0};
-	sprintf(s_msg, "\033[0;32mSuccess: %s \033[0m\n\n", fmt);
+	sprintf(s_msg, "\033[32mSuccess: %s \033[0m\n\n", fmt);
 	vprintf(s_msg, args);
 	va_end(args);
 }
